@@ -10,26 +10,25 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as OurApproachRouteImport } from './routes/our-approach'
+import { Route as GccStartupsRouteImport } from './routes/gcc-startups'
 import { Route as ExecutiveSearchRouteImport } from './routes/executive-search'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as OurApproachIndexRouteImport } from './routes/our-approach/index'
+import { Route as OurApproachTalentStrategyRouteImport } from './routes/our-approach/talent-strategy'
+import { Route as OurApproachTalentRetentionRouteImport } from './routes/our-approach/talent-retention'
+import { Route as OurApproachTalentExperienceRouteImport } from './routes/our-approach/talent-experience'
+import { Route as OurApproachTalentBrandingRouteImport } from './routes/our-approach/talent-branding'
 
 const TestimonialsRoute = TestimonialsRouteImport.update({
   id: '/testimonials',
   path: '/testimonials',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OurApproachRoute = OurApproachRouteImport.update({
-  id: '/our-approach',
-  path: '/our-approach',
+const GccStartupsRoute = GccStartupsRouteImport.update({
+  id: '/gcc-startups',
+  path: '/gcc-startups',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExecutiveSearchRoute = ExecutiveSearchRouteImport.update({
@@ -52,24 +51,61 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OurApproachIndexRoute = OurApproachIndexRouteImport.update({
+  id: '/our-approach/',
+  path: '/our-approach/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurApproachTalentStrategyRoute =
+  OurApproachTalentStrategyRouteImport.update({
+    id: '/our-approach/talent-strategy',
+    path: '/our-approach/talent-strategy',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OurApproachTalentRetentionRoute =
+  OurApproachTalentRetentionRouteImport.update({
+    id: '/our-approach/talent-retention',
+    path: '/our-approach/talent-retention',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OurApproachTalentExperienceRoute =
+  OurApproachTalentExperienceRouteImport.update({
+    id: '/our-approach/talent-experience',
+    path: '/our-approach/talent-experience',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OurApproachTalentBrandingRoute =
+  OurApproachTalentBrandingRouteImport.update({
+    id: '/our-approach/talent-branding',
+    path: '/our-approach/talent-branding',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
   '/executive-search': typeof ExecutiveSearchRoute
-  '/our-approach': typeof OurApproachRoute
-  '/services': typeof ServicesRoute
+  '/gcc-startups': typeof GccStartupsRoute
   '/testimonials': typeof TestimonialsRoute
+  '/our-approach/talent-branding': typeof OurApproachTalentBrandingRoute
+  '/our-approach/talent-experience': typeof OurApproachTalentExperienceRoute
+  '/our-approach/talent-retention': typeof OurApproachTalentRetentionRoute
+  '/our-approach/talent-strategy': typeof OurApproachTalentStrategyRoute
+  '/our-approach': typeof OurApproachIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
   '/executive-search': typeof ExecutiveSearchRoute
-  '/our-approach': typeof OurApproachRoute
-  '/services': typeof ServicesRoute
+  '/gcc-startups': typeof GccStartupsRoute
   '/testimonials': typeof TestimonialsRoute
+  '/our-approach/talent-branding': typeof OurApproachTalentBrandingRoute
+  '/our-approach/talent-experience': typeof OurApproachTalentExperienceRoute
+  '/our-approach/talent-retention': typeof OurApproachTalentRetentionRoute
+  '/our-approach/talent-strategy': typeof OurApproachTalentStrategyRoute
+  '/our-approach': typeof OurApproachIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,9 +113,13 @@ export interface FileRoutesById {
   '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
   '/executive-search': typeof ExecutiveSearchRoute
-  '/our-approach': typeof OurApproachRoute
-  '/services': typeof ServicesRoute
+  '/gcc-startups': typeof GccStartupsRoute
   '/testimonials': typeof TestimonialsRoute
+  '/our-approach/talent-branding': typeof OurApproachTalentBrandingRoute
+  '/our-approach/talent-experience': typeof OurApproachTalentExperienceRoute
+  '/our-approach/talent-retention': typeof OurApproachTalentRetentionRoute
+  '/our-approach/talent-strategy': typeof OurApproachTalentStrategyRoute
+  '/our-approach/': typeof OurApproachIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -88,27 +128,39 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/contact'
     | '/executive-search'
-    | '/our-approach'
-    | '/services'
+    | '/gcc-startups'
     | '/testimonials'
+    | '/our-approach/talent-branding'
+    | '/our-approach/talent-experience'
+    | '/our-approach/talent-retention'
+    | '/our-approach/talent-strategy'
+    | '/our-approach'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about-us'
     | '/contact'
     | '/executive-search'
-    | '/our-approach'
-    | '/services'
+    | '/gcc-startups'
     | '/testimonials'
+    | '/our-approach/talent-branding'
+    | '/our-approach/talent-experience'
+    | '/our-approach/talent-retention'
+    | '/our-approach/talent-strategy'
+    | '/our-approach'
   id:
     | '__root__'
     | '/'
     | '/about-us'
     | '/contact'
     | '/executive-search'
-    | '/our-approach'
-    | '/services'
+    | '/gcc-startups'
     | '/testimonials'
+    | '/our-approach/talent-branding'
+    | '/our-approach/talent-experience'
+    | '/our-approach/talent-retention'
+    | '/our-approach/talent-strategy'
+    | '/our-approach/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -116,9 +168,13 @@ export interface RootRouteChildren {
   AboutUsRoute: typeof AboutUsRoute
   ContactRoute: typeof ContactRoute
   ExecutiveSearchRoute: typeof ExecutiveSearchRoute
-  OurApproachRoute: typeof OurApproachRoute
-  ServicesRoute: typeof ServicesRoute
+  GccStartupsRoute: typeof GccStartupsRoute
   TestimonialsRoute: typeof TestimonialsRoute
+  OurApproachTalentBrandingRoute: typeof OurApproachTalentBrandingRoute
+  OurApproachTalentExperienceRoute: typeof OurApproachTalentExperienceRoute
+  OurApproachTalentRetentionRoute: typeof OurApproachTalentRetentionRoute
+  OurApproachTalentStrategyRoute: typeof OurApproachTalentStrategyRoute
+  OurApproachIndexRoute: typeof OurApproachIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -130,18 +186,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestimonialsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/our-approach': {
-      id: '/our-approach'
-      path: '/our-approach'
-      fullPath: '/our-approach'
-      preLoaderRoute: typeof OurApproachRouteImport
+    '/gcc-startups': {
+      id: '/gcc-startups'
+      path: '/gcc-startups'
+      fullPath: '/gcc-startups'
+      preLoaderRoute: typeof GccStartupsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/executive-search': {
@@ -172,6 +221,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/our-approach/': {
+      id: '/our-approach/'
+      path: '/our-approach'
+      fullPath: '/our-approach'
+      preLoaderRoute: typeof OurApproachIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-approach/talent-strategy': {
+      id: '/our-approach/talent-strategy'
+      path: '/our-approach/talent-strategy'
+      fullPath: '/our-approach/talent-strategy'
+      preLoaderRoute: typeof OurApproachTalentStrategyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-approach/talent-retention': {
+      id: '/our-approach/talent-retention'
+      path: '/our-approach/talent-retention'
+      fullPath: '/our-approach/talent-retention'
+      preLoaderRoute: typeof OurApproachTalentRetentionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-approach/talent-experience': {
+      id: '/our-approach/talent-experience'
+      path: '/our-approach/talent-experience'
+      fullPath: '/our-approach/talent-experience'
+      preLoaderRoute: typeof OurApproachTalentExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-approach/talent-branding': {
+      id: '/our-approach/talent-branding'
+      path: '/our-approach/talent-branding'
+      fullPath: '/our-approach/talent-branding'
+      preLoaderRoute: typeof OurApproachTalentBrandingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -180,9 +264,13 @@ const rootRouteChildren: RootRouteChildren = {
   AboutUsRoute: AboutUsRoute,
   ContactRoute: ContactRoute,
   ExecutiveSearchRoute: ExecutiveSearchRoute,
-  OurApproachRoute: OurApproachRoute,
-  ServicesRoute: ServicesRoute,
+  GccStartupsRoute: GccStartupsRoute,
   TestimonialsRoute: TestimonialsRoute,
+  OurApproachTalentBrandingRoute: OurApproachTalentBrandingRoute,
+  OurApproachTalentExperienceRoute: OurApproachTalentExperienceRoute,
+  OurApproachTalentRetentionRoute: OurApproachTalentRetentionRoute,
+  OurApproachTalentStrategyRoute: OurApproachTalentStrategyRoute,
+  OurApproachIndexRoute: OurApproachIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

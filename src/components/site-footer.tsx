@@ -1,83 +1,112 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router"
+import { Linkedin, Twitter, Mail } from "lucide-react"
 
 export function SiteFooter() {
+  const socialLinks = [
+    { icon: Linkedin, href: "https://linkedin.com/company/whiteglove-labs", label: "LinkedIn" },
+    { icon: Twitter, href: "https://twitter.com/whiteglove_labs", label: "Twitter" },
+    { icon: Mail, href: "mailto:hello@whiteglove-labs.com", label: "Email" },
+  ]
+
+  const exploreLinks = [
+    { href: "/testimonials", label: "Testimonials" },
+    { href: "/about-us", label: "About" },
+  ]
+
+  const companyLinks = [
+    { href: "/about-us", label: "About" },
+    { href: "/contact", label: "Contact" },
+  ]
+
   return (
-    <footer className="border-t">
-      <div className="mx-auto max-w-6xl px-4 py-6">
-        <div className="grid gap-8 md:grid-cols-4">
-          <div>
-            <div className="flex items-center gap-2">
-              <div className="h-6 w-6 rounded bg-primary" aria-hidden />
-              <span className="font-semibold">Whiteglove Labs</span>
-            </div>
-            <p className="mt-3 text-sm text-muted-foreground">
+    <footer className="bg-background text-foreground border-t border-border">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
+          <div className="space-y-4">
+            <Link to="/" className="inline-block">
+              <img src="/black-logo.png" alt="Whiteglove Labs" className="h-8 w-auto dark:invert" />
+            </Link>
+            <p className="text-sm leading-relaxed text-muted-foreground">
               Structured interviews, calibrated feedback, and confident decisions.
             </p>
           </div>
+
+          {/* Explore */}
           <div>
-            <p className="text-sm font-medium">Explore</p>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li>
-                <Link to="/services" className="hover:text-foreground">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/testimonials" className="hover:text-foreground">
-                  Testimonials
-                </Link>
-              </li>
-              <li>
-                <Link to="/about-us" className="hover:text-foreground">
-                  About
-                </Link>
-              </li>
+            <h3 className="text-sm font-semibold text-foreground">Explore</h3>
+            <ul className="mt-4 space-y-3">
+              {exploreLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    to={item.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* Company */}
           <div>
-            <p className="text-sm font-medium">Company</p>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li>
-                <Link className="hover:text-foreground" to="/about-us">
-                  About
-                </Link>
-              </li>
-              <li>
-                <a className="hover:text-foreground" href="#" aria-disabled>
-                  Careers
-                </a>
-              </li>
-              <li>
-                <Link className="hover:text-foreground" to="/contact">
-                  Contact
-                </Link>
-              </li>
+            <h3 className="text-sm font-semibold text-foreground">Company</h3>
+            <ul className="mt-4 space-y-3">
+              {companyLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    to={item.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* Social Icons */}
           <div>
-            <p className="text-sm font-medium">Legal</p>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a className="hover:text-foreground" href="#" aria-disabled>
-                  Privacy
+            <h3 className="text-sm font-semibold text-foreground">Connect</h3>
+            <div className="mt-4 flex gap-3">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <item.icon className="h-5 w-5" />
                 </a>
-              </li>
-              <li>
-                <a className="hover:text-foreground" href="#" aria-disabled>
-                  Terms
-                </a>
-              </li>
-              <li>
-                <a className="hover:text-foreground" href="#" aria-disabled>
-                  Security
-                </a>
-              </li>
-            </ul>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 border-t pt-6 text-xs text-muted-foreground md:flex-row">
-          <p>© {new Date().getFullYear()} Whiteglove Labs. All rights reserved.</p>
+        {/* Bottom Section */}
+        <div className="border-t border-border">
+          <div className="flex flex-col items-center justify-between gap-4 px-4 py-6 md:flex-row">
+            <p className="text-sm text-muted-foreground text-center md:text-left">
+              &copy; {new Date().getFullYear()} Whiteglove Labs. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <a
+                href="#"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Terms of Service
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

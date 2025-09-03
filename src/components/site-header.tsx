@@ -2,72 +2,171 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { Link } from "@tanstack/react-router"
+import { cn } from "@/lib/utils"
 
 const nav = [
   { href: "/about-us", label: "About Us" },
   { href: "/executive-search", label: "Executive Search" },
-  { href: "/our-approach", label: "Our Approach" },
+  {
+    label: "Our Approach",
+    dropdown: [
+      { href: "/our-approach/talent-strategy", label: "Talent Strategy" },
+      { href: "/our-approach/talent-branding", label: "Talent Branding & Attraction" },
+      { href: "/our-approach/talent-experience", label: "Talent Experience" },
+      { href: "/our-approach/talent-retention", label: "Talent Retention" },
+    ],
+  },
+  { href: "/gcc-startups", label: "Global Capability Center & Startups" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ]
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false)
+  const [ mobileDropdownOpen, setMobileDropdownOpen ] = useState<string | null>( null )
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="mt-4 flex items-center justify-between rounded-md border border-border bg-background/80 px-4 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <Link to="/" aria-label="Go to homepage">
-            <img src="/black-logo.png" alt="whiteglovelabs-logo" className="max-w-52 h-auto"/>
-          </Link>
+    <header className="fixed inset-x-0 lg:top-2 z-50">
+      <div className="container max-w-7xl mx-auto flex h-16 items-center justify-between px-4 lg:px-6 bg-background/80 backdrop-blur-md shadow-sm lg:rounded-lg">
+        {/* Logo */ }
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/black-logo.png" alt="Whiteglove Labs" className="h-8 w-auto dark:invert" />
+        </Link>
 
-          <nav className="hidden items-center gap-6 md:flex">
-            {nav.map((i) => (
-              <Link key={i.href} to={i.href} className="text-sm text-muted-foreground hover:text-foreground">
-                {i.label}
+        {/* Desktop nav */ }
+        <nav className="hidden md:flex md:items-center md:gap-8 relative">
+          { nav.map( ( item ) =>
+            item.dropdown ? (
+              <DropdownMenu key={ item.label }>
+                <DropdownMenuTrigger asChild>
+                  <button className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors">
+                    { item.label } <ChevronDown className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-52 bg-popover text-popover-foreground border-border">
+                  { item.dropdown.map( ( sub ) => (
+                    <DropdownMenuItem key={ sub.href } asChild className="focus:bg-accent focus:text-accent-foreground">
+                      <Link to={ sub.href } className="cursor-pointer">
+                        { sub.label }
+                      </Link>
+                    </DropdownMenuItem>
+                  ) ) }
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                key={ item.href }
+                to={ item.href }
+                className={ cn(
+                  "relative text-sm font-medium transition-colors",
+                  "text-foreground hover:text-primary"
+                ) }
+                activeProps={ {
+                  className:
+                    "text-primary after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-primary after:rounded-full",
+                } }
+              >
+                { item.label }
               </Link>
-            ))}
-          </nav>
+            )
+          ) }
+        </nav>
 
-          <div className="hidden gap-2 md:flex">
-            <Button className="bg-primary text-primary-foreground hover:opacity-90" asChild>
-              <Link to="/contact">Book a call</Link>
-            </Button>
-          </div>
-
-          <button
-            className="inline-flex items-center justify-center rounded md:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+        {/* Desktop CTA */ }
+        <div className="hidden md:block">
+          <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Link to="/contact">Book a Call</Link>
+          </Button>
         </div>
 
-        {open && (
-          <div className="mt-2 rounded-md border border-border bg-background/90 p-3 md:hidden">
-            <nav className="flex flex-col gap-2">
-              {nav.map((i) => (
-                <Link
-                  key={i.href}
-                  to={i.href}
-                  className="rounded px-2 py-2 text-sm text-muted-foreground hover:bg-muted"
-                  onClick={() => setOpen(false)}
-                >
-                  {i.label}
+        {/* Mobile navigation */ }
+        <Sheet>
+          <SheetTrigger asChild>
+            <button
+              className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent hover:text-accent-foreground md:hidden transition-colors"
+              aria-label="Toggle navigation"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-full sm:max-w-md bg-background text-foreground border-l border-border">
+            <div className="flex flex-col h-full">
+              <div className="flex items-center justify-between border-b border-border p-4">
+                <Link to="/" onClick={ () => document.dispatchEvent( new KeyboardEvent( 'keydown', { key: 'Escape' } ) ) }>
+                  <img src="/black-logo.png" alt="Whiteglove Labs" className="h-8 w-auto dark:invert" />
                 </Link>
-              ))}
-              <Button className="mt-2 w-full bg-primary text-primary-foreground hover:opacity-90" asChild>
-                <Link to="/contact" onClick={() => setOpen(false)}>
-                  Get in touch
-                </Link>
-              </Button>
-            </nav>
-          </div>
-        )}
+              </div>
+
+              <nav className="flex-1 py-6 space-y-2">
+                { nav.map( ( item ) =>
+                  item.dropdown ? (
+                    <div key={ item.label } className="space-y-1">
+                      <button
+                        className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-foreground rounded-md hover:bg-accent hover:text-accent-foreground"
+                        onClick={ () => setMobileDropdownOpen(
+                          mobileDropdownOpen === item.label ? null : item.label
+                        ) }
+                      >
+                        { item.label }
+                        <ChevronDown
+                          className={ cn(
+                            "h-4 w-4 transition-transform",
+                            mobileDropdownOpen === item.label ? "rotate-180" : ""
+                          ) }
+                        />
+                      </button>
+                      { mobileDropdownOpen === item.label && (
+                        <div className="pl-4 space-y-1">
+                          { item.dropdown.map( ( sub ) => (
+                            <SheetTrigger key={ sub.href } asChild>
+                              <Link
+                                to={ sub.href }
+                                className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                              >
+                                { sub.label }
+                              </Link>
+                            </SheetTrigger>
+                          ) ) }
+                        </div>
+                      ) }
+                    </div>
+                  ) : (
+                    <SheetTrigger key={ item.href } asChild>
+                      <Link
+                        to={ item.href }
+                        className="block rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                        activeProps={ { className: "bg-primary text-primary-foreground font-semibold" } }
+                      >
+                        { item.label }
+                      </Link>
+                    </SheetTrigger>
+                  )
+                ) }
+              </nav>
+
+              <div className="border-t border-border pt-4">
+                <SheetTrigger asChild>
+                  <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="sm">
+                    <Link to="/contact">Book a Call</Link>
+                  </Button>
+                </SheetTrigger>
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   )

@@ -1,68 +1,51 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { ContactForm } from "@/components/contact-form"
 
 export function HeroContact() {
   return (
-    <section className="relative isolate">
-      {/* Background image */}
-      <div aria-hidden className="absolute inset-0 -z-10 bg-[url('/people-walking-in-lobby--overhead-view.png')] bg-cover bg-center" />
-      <div aria-hidden className="absolute inset-0 -z-10 bg-black/55" />
+    <section className="relative isolate overflow-hidden bg-foreground">
+      {/* Background image */ }
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-[url('/people-walking-in-lobby--overhead-view.png')] bg-cover bg-center"
+      />
+      {/* Gradient overlay */ }
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-gradient-to-br from-foreground/95 via-foreground/90 to-foreground/80"
+      />
 
-      <div className="mx-auto max-w-6xl px-4 pt-28 pb-12 md:pb-16">
-        <div className="grid items-start gap-8 md:grid-cols-2">
-          <div className="text-white">
-            <p className="text-[10px] uppercase tracking-widest opacity-80">
-              Redefining Talent Strategy and Management
+      <div className="container max-w-7xl mx-auto relative px-4 py-24 sm:py-32">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          {/* Left: Text Content */ }
+          <div className="text-background space-y-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/80">
+              Whiteglove Labs
             </p>
-            <h1 className="mt-2 text-pretty text-3xl font-semibold leading-tight md:text-5xl">
-              TalentForge Growth Advisors
+            <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl drop-shadow-md">
+              Finding Visionary Tech Leaders
             </h1>
-            <p className="mt-3 max-w-xl text-zinc-200 md:text-lg">
-              A boutique advisory partnering with founders and leaders to build repeatable, fair, and data-backed hiring
-              systems across leadership, tech, and global capability centers.
+            <p className="text-lg text-muted-foreground/95 max-w-lg">
+              For Next-Gen Startups and Enterprises
+            </p>
+            <p className="text-base leading-relaxed text-muted-foreground/90 max-w-2xl">
+              We redefine talent strategy by partnering with founders and leaders to build
+              repeatable, fair, and data-backed hiring systems across leadership, technology,
+              and global capability centers.
             </p>
           </div>
 
-          <Card className="border-red-600/20 bg-white/95 shadow-lg">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-zinc-700">
-                Let’s create a bespoke solution for you
+          {/* Right: Contact Form */ }
+          <Card className="w-full border border-border bg-card shadow-lg">
+            <CardHeader className="border-b border-border pb-4">
+              <CardTitle className="text-xl font-bold tracking-tight text-card-foreground">
+                Let&apos;s create a bespoke solution for you
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <form
-                className="grid grid-cols-1 gap-3 sm:grid-cols-2"
-                onSubmit={(e) => {
-                  e.preventDefault()
-                  alert("Form submitted (demo)")
-                }}
-              >
-                <div className="space-y-1">
-                  <Label htmlFor="fname">First name</Label>
-                  <Input id="fname" name="fname" placeholder="Jane" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="lname">Last name</Label>
-                  <Input id="lname" name="lname" placeholder="Doe" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" name="email" placeholder="jane@company.com" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" name="phone" placeholder="+1 555 000 1234" />
-                </div>
-                <div className="sm:col-span-2">
-                  <Button type="submit" className="w-full bg-red-600 text-white hover:bg-red-700">
-                    Get in touch
-                  </Button>
-                </div>
-              </form>
+            <CardContent className="pt-6">
+              <ContactForm />
             </CardContent>
           </Card>
         </div>

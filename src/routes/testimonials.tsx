@@ -1,56 +1,67 @@
-import { createFileRoute } from '@tanstack/react-router';
+"use client"
+
+import { createFileRoute } from "@tanstack/react-router"
+import { PageHero } from "@/components/page-hero"
+import { TestimonialCard } from "@/components/testimonial-card"
 
 const testimonials = [
   {
-    quote:
-      "They moved our hiring velocity from weeks to days, without compromising quality. Clear process and outcomes.",
+    id: 1,
+    quote: "They moved our hiring velocity from weeks to days, without compromising quality. Clear process and outcomes.",
     author: "Priya Desai",
-    role: "VP People, FintechCo",
+    role: "VP People",
+    company: "FintechCo",
+    rating: 5
   },
   {
+    id: 2,
     quote: "The GCC setup was surgical—compliant, fast, and well-led. We were shipping within the first quarter.",
     author: "Martin Lopez",
-    role: "COO, Global SaaS",
+    role: "COO",
+    company: "Global SaaS",
+    rating: 5
   },
   {
+    id: 3,
     quote: "Exec search done right. Thorough research, strong shortlist, and a hire who changed our trajectory.",
     author: "Sarah Chen",
-    role: "Founder & CEO, HealthTech",
+    role: "Founder & CEO",
+    company: "HealthTech",
+    rating: 5
   },
   {
+    id: 4,
     quote: "Hiring pods gave us leverage at exactly the right moments—pipeline, coordination, and close.",
     author: "Daniel Kim",
-    role: "Head of Talent, LogisticsAI",
+    role: "Head of Talent",
+    company: "LogisticsAI",
+    rating: 5
   },
-];
+]
 
-function RouteComponent() {
+function TestimonialsPage() {
   return (
-    <main className="bg-muted">
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-14 sm:py-20">
-        <div className="max-w-2xl">
-          <h1 className="text-pretty text-3xl sm:text-4xl font-semibold">Client Outcomes</h1>
-          <p className="mt-3 text-muted-foreground">
-            Results that compound—faster hiring, stronger teams, and accountable delivery.
-          </p>
-        </div>
+    <main className="bg-background min-h-screen">
+      <PageHero
+        title="Client Outcomes"
+        subtitle="Results that compound—faster hiring, stronger teams, and accountable delivery."
+      />
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure key={t.author} className="rounded-lg border bg-card p-6">
-              <blockquote className="text-sm leading-relaxed text-muted-foreground">“{t.quote}”</blockquote>
-              <figcaption className="mt-4 text-sm font-medium">
-                {t.author}
-                <span className="ml-2 font-normal text-muted-foreground">— {t.role}</span>
-              </figcaption>
-            </figure>
-          ))}
+      <section className="py-16 sm:py-24">
+        <div className="container mx-auto max-w-7xl px-4 lg:px-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          { testimonials.map( ( testimonial, index ) => (
+            <TestimonialCard
+              key={ testimonial.id }
+              testimonial={ testimonial }
+              index={ index }
+            />
+          ) ) }
         </div>
       </section>
     </main>
-  );
+  )
 }
 
-export const Route = createFileRoute('/testimonials')({
-  component: RouteComponent,
-});
+export const Route = createFileRoute( "/testimonials" )( {
+  component: TestimonialsPage,
+} )
