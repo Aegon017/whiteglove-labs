@@ -21,7 +21,7 @@ export function AboutSection() {
             guide every engagement.
           </p>
           <a
-            to="#services"
+            href="#services"
             className="mt-3 inline-block text-xs font-medium text-red-600 underline underline-offset-4"
           >
             Read more
