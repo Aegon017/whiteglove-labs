@@ -12,9 +12,8 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-  SheetClose,
 } from "@/components/ui/sheet"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, ChevronDown } from "lucide-react"
 import { Link } from "@tanstack/react-router"
 import { cn } from "@/lib/utils"
 

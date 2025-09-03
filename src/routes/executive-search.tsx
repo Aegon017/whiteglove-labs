@@ -3,7 +3,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
 import { Users, Target, BarChart3 } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 

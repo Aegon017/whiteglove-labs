@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Card, CardContent } from "./ui/card"
 import { motion } from "framer-motion"
 import { Quote } from "lucide-react"
@@ -26,8 +25,6 @@ export function TestimonialCard( {
   variant = "default",
   className = ""
 }: TestimonialCardProps ) {
-  const [ isHovered, setIsHovered ] = useState( false )
-
   // Render star ratings if provided
   const renderStars = () => {
     if ( !testimonial.rating ) return null
@@ -67,8 +64,6 @@ export function TestimonialCard( {
       whileHover={ variant !== "minimal" ? { y: -5 } : {} }
       transition={ { duration: 0.3, delay: index * 0.1 } }
       viewport={ { once: true } }
-      onHoverStart={ () => variant !== "minimal" && setIsHovered( true ) }
-      onHoverEnd={ () => variant !== "minimal" && setIsHovered( false ) }
       className={ `h-full ${ className }` }
     >
       <Card
