@@ -7,7 +7,8 @@ import { Link } from "@tanstack/react-router"
 
 const nav = [
   { href: "/about-us", label: "About Us" },
-  { href: "/services", label: "Services" },
+  { href: "/executive-search", label: "Executive Search" },
+  { href: "/our-approach", label: "Our Approach" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ]
@@ -18,10 +19,9 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="mt-4 flex items-center justify-between rounded-md border border-border bg-background/80 px-3 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <Link to="/" className="flex items-center gap-2" aria-label="Go to homepage">
-            <div className="h-6 w-6 rounded bg-primary" aria-hidden />
-            <span className="font-semibold">Whiteglove Labs</span>
+        <div className="mt-4 flex items-center justify-between rounded-md border border-border bg-background/80 px-4 py-2 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <Link to="/" aria-label="Go to homepage">
+            <img src="/black-logo.png" alt="whiteglovelabs-logo" className="max-w-52 h-auto"/>
           </Link>
 
           <nav className="hidden items-center gap-6 md:flex">

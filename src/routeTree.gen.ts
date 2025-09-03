@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as OurApproachRouteImport } from './routes/our-approach'
+import { Route as ExecutiveSearchRouteImport } from './routes/executive-search'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
@@ -23,6 +25,16 @@ const TestimonialsRoute = TestimonialsRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurApproachRoute = OurApproachRouteImport.update({
+  id: '/our-approach',
+  path: '/our-approach',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExecutiveSearchRoute = ExecutiveSearchRouteImport.update({
+  id: '/executive-search',
+  path: '/executive-search',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -45,6 +57,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
+  '/executive-search': typeof ExecutiveSearchRoute
+  '/our-approach': typeof OurApproachRoute
   '/services': typeof ServicesRoute
   '/testimonials': typeof TestimonialsRoute
 }
@@ -52,6 +66,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
+  '/executive-search': typeof ExecutiveSearchRoute
+  '/our-approach': typeof OurApproachRoute
   '/services': typeof ServicesRoute
   '/testimonials': typeof TestimonialsRoute
 }
@@ -60,19 +76,37 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/contact': typeof ContactRoute
+  '/executive-search': typeof ExecutiveSearchRoute
+  '/our-approach': typeof OurApproachRoute
   '/services': typeof ServicesRoute
   '/testimonials': typeof TestimonialsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about-us' | '/contact' | '/services' | '/testimonials'
+  fullPaths:
+    | '/'
+    | '/about-us'
+    | '/contact'
+    | '/executive-search'
+    | '/our-approach'
+    | '/services'
+    | '/testimonials'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about-us' | '/contact' | '/services' | '/testimonials'
+  to:
+    | '/'
+    | '/about-us'
+    | '/contact'
+    | '/executive-search'
+    | '/our-approach'
+    | '/services'
+    | '/testimonials'
   id:
     | '__root__'
     | '/'
     | '/about-us'
     | '/contact'
+    | '/executive-search'
+    | '/our-approach'
     | '/services'
     | '/testimonials'
   fileRoutesById: FileRoutesById
@@ -81,6 +115,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
   ContactRoute: typeof ContactRoute
+  ExecutiveSearchRoute: typeof ExecutiveSearchRoute
+  OurApproachRoute: typeof OurApproachRoute
   ServicesRoute: typeof ServicesRoute
   TestimonialsRoute: typeof TestimonialsRoute
 }
@@ -99,6 +135,20 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-approach': {
+      id: '/our-approach'
+      path: '/our-approach'
+      fullPath: '/our-approach'
+      preLoaderRoute: typeof OurApproachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/executive-search': {
+      id: '/executive-search'
+      path: '/executive-search'
+      fullPath: '/executive-search'
+      preLoaderRoute: typeof ExecutiveSearchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -129,6 +179,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
   ContactRoute: ContactRoute,
+  ExecutiveSearchRoute: ExecutiveSearchRoute,
+  OurApproachRoute: OurApproachRoute,
   ServicesRoute: ServicesRoute,
   TestimonialsRoute: TestimonialsRoute,
 }

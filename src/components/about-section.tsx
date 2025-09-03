@@ -1,32 +1,57 @@
-import { ArrowDownRight } from "lucide-react"
+import { motion } from 'framer-motion'
 
 export function AboutSection() {
   return (
-    <section id="about" className="border-t bg-white">
-      <div className="mx-auto max-w-6xl grid grid-cols-1 gap-6 px-4 py-12 md:grid-cols-3">
-        <div>
-          <p className="text-xs uppercase tracking-widest text-zinc-500">About</p>
-          <h2 className="mt-1 text-sm font-semibold">TalentForge Growth Advisors</h2>
-          <ArrowDownRight className="mt-6 h-6 w-6 text-red-600" aria-hidden />
-        </div>
-        <div className="md:col-span-2">
-          <p className="text-sm leading-relaxed text-zinc-700">
-            TalentForge is a global talent strategy firm specializing in executive search, AI-driven capability centers,
-            and leadership assessments. We combine structured interviewing, calibrated feedback, and pragmatic operator
-            expertise to help companies hire with confidence and speed.
+    <section
+      id="about"
+      className="container mx-auto px-4 py-16 sm:py-24 max-w-6xl"
+    >
+      <div className="mb-12 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground relative inline-block">
+          About Us
+          <div className="mt-3 h-1 w-24 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full" />
+        </h2>
+      </div>
+
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* Text Section */ }
+        <div className="space-y-6 text-muted-foreground leading-relaxed text-[16px]">
+          <p>
+            Optimizing tech leadership consulting and executive search is a
+            delicate task. The decisions made by executives significantly
+            influence both their own success and the organization’s performance
+            and reputation. Pursuing the right hiring strategy is essential for
+            fostering strong relationships between leaders and companies.
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-700">
-            We partner from first principles: define competencies, establish rating anchors, guide interviewers, and
-            turn qualitative notes into comparable signals across panels. Integrity, context, and measurable outcomes
-            guide every engagement.
+          <p>
+            Whiteglove Labs excels in setting up Global Capability Centres
+            (GCCs) in India, with decades of expertise in recruiting for
+            leadership roles in technology, AI, ML, and Data Science. Our
+            executive search services are designed to your needs, delivering top
+            leadership talent and great potential while offering a white glove
+            experience throughout the journey for both employer and candidate.
           </p>
-          <a
-            href="#services"
-            className="mt-3 inline-block text-xs font-medium text-red-600 underline underline-offset-4"
-          >
-            Read more
-          </a>
+          <p>
+            With over two decades of experience in recruiting for technology
+            talent for management and leadership roles, we offer a consultative
+            approach to meet your hiring needs with accuracy, speed and quality.
+            Explore our comprehensive talent management solutions, crafted to
+            optimize compensation, culture, and performance while aligning with
+            global benchmarks.
+          </p>
         </div>
+
+        {/* Image Section */ }
+        <motion.div
+          whileHover={ { y: -6 } }
+          className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-border"
+        >
+          <img
+            src="https://whiteglovelabs.io/Images/image5.webp"
+            alt="Whiteglove Labs team"
+            className="w-full h-[420px] object-cover object-center"
+          />
+        </motion.div>
       </div>
     </section>
   )

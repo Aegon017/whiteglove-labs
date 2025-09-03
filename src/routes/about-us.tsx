@@ -33,7 +33,7 @@ function AboutUs() {
           {/* Text */ }
           <div className="space-y-6 text-muted-foreground leading-relaxed text-[16px]">
             <p>
-              Optimizing tech leadership consulting and executive search is a
+              <span className='ml-8'></span>Optimizing tech leadership consulting and executive search is a
               delicate task. The decisions made by executives significantly
               influence both their own success and the organization’s
               performance and reputation. Pursuing the right hiring strategy is
