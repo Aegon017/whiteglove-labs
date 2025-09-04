@@ -3,8 +3,8 @@ import { Linkedin, Twitter, Mail } from "lucide-react"
 
 export function SiteFooter() {
   const socialLinks = [
-    { icon: Linkedin, href: "https://linkedin.com/company/whiteglove-labs", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com/whiteglove_labs", label: "Twitter" },
+    { icon: Linkedin, href: "https:
+    { icon: Twitter, href: "https:
     { icon: Mail, href: "mailto:hello@whiteglove-labs.com", label: "Email" },
   ]
 
@@ -22,7 +22,7 @@ export function SiteFooter() {
     <footer className="bg-background text-foreground border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
+          
           <div className="space-y-4">
             <Link to="/" className="inline-block">
               <img src="/black-logo.png" alt="Whiteglove Labs" className="h-8 w-auto dark:invert" />
@@ -32,7 +32,7 @@ export function SiteFooter() {
             </p>
           </div>
 
-          {/* Explore */}
+          
           <div>
             <h3 className="text-sm font-semibold text-foreground">Explore</h3>
             <ul className="mt-4 space-y-3">
@@ -49,7 +49,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Company */}
+          
           <div>
             <h3 className="text-sm font-semibold text-foreground">Company</h3>
             <ul className="mt-4 space-y-3">
@@ -66,7 +66,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {/* Social Icons */}
+          
           <div>
             <h3 className="text-sm font-semibold text-foreground">Connect</h3>
             <div className="mt-4 flex gap-3">
@@ -86,7 +86,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        {/* Bottom Section */}
+        
         <div className="border-t border-border">
           <div className="flex flex-col items-center justify-between gap-4 px-4 py-6 md:flex-row">
             <p className="text-sm text-muted-foreground text-center md:text-left">

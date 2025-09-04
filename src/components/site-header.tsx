@@ -40,12 +40,12 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 lg:top-2 z-50">
       <div className="container max-w-7xl mx-auto flex h-16 items-center justify-between px-4 lg:px-6 bg-background/80 backdrop-blur-md shadow-sm lg:rounded-lg">
-        {/* Logo */ }
+        
         <Link to="/" className="flex items-center gap-2">
           <img src="/black-logo.png" alt="Whiteglove Labs" className="h-8 w-auto dark:invert" />
         </Link>
 
-        {/* Desktop nav */ }
+        
         <nav className="hidden md:flex md:items-center md:gap-8 relative">
           { nav.map( ( item ) =>
             item.dropdown ? (
@@ -84,14 +84,14 @@ export function SiteHeader() {
           ) }
         </nav>
 
-        {/* Desktop CTA */ }
+        
         <div className="hidden md:block">
           <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
             <Link to="/contact">Book a Call</Link>
           </Button>
         </div>
 
-        {/* Mobile navigation */ }
+        
         <Sheet>
           <SheetTrigger asChild>
             <button

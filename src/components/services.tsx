@@ -83,7 +83,7 @@ export function Services() {
                   <button className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80">
                     Learn more
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns="http:
                       width="16"
                       height="16"
                       viewBox="0 0 24 24"

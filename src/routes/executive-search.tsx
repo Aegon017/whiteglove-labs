@@ -36,7 +36,7 @@ function ExecutiveSearchPage() {
         subtitle="Connecting your organization with top leadership talent through strategic, data-driven, and inclusive methods."
       />
 
-      {/* Intro Section */ }
+      
       <section className="py-16 sm:py-24">
         <div className="container mx-auto max-w-7xl px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-muted-foreground text-[16px] leading-relaxed">
@@ -69,7 +69,7 @@ function ExecutiveSearchPage() {
         </div>
       </section>
 
-      {/* Info Cards Section */ }
+      
       <section className="py-16 sm:py-24 bg-muted/30">
         <div className="container mx-auto max-w-7xl px-4 lg:px-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           { infoCards.map( ( card, i ) => (

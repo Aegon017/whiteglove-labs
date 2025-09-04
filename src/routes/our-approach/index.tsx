@@ -41,10 +41,10 @@ function OurApproachPage() {
                 subtitle="Comprehensive, transparent, and customized executive search for leadership talent."
             />
 
-            {/* Main Our Approach Section */ }
+            
             <section className="py-20 sm:py-28">
                 <div className="container mx-auto max-w-7xl px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Text */ }
+                    
                     <motion.div
                         initial={ { opacity: 0, x: -20 } }
                         animate={ { opacity: 1, x: 0 } }
@@ -68,7 +68,7 @@ function OurApproachPage() {
                         </p>
                     </motion.div>
 
-                    {/* Image */ }
+                    
                     <motion.div
                         initial={ { opacity: 0, x: 20 } }
                         animate={ { opacity: 1, x: 0 } }
@@ -84,7 +84,7 @@ function OurApproachPage() {
                 </div>
             </section>
 
-            {/* Talent Spectrum */ }
+            
             <section className="py-20 sm:py-28 bg-muted/30">
                 <div className="container mx-auto max-w-7xl px-4 lg:px-8 space-y-12">
                     <h2 className="text-3xl font-semibold text-center text-foreground mb-12">

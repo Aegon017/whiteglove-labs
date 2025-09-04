@@ -39,16 +39,16 @@ function AboutUs() {
 
   return (
     <main className="bg-background min-h-screen">
-      {/* Hero Section */ }
+      
       <PageHero
         title="About Us"
         subtitle="Learn more about our expertise in executive search, leadership consulting, and building high-performing teams."
       />
 
-      {/* Company Intro */ }
+      
       <section className="py-16 sm:py-24">
         <div className="container mx-auto max-w-7xl px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text */ }
+          
           <div className="space-y-6 text-muted-foreground text-[16px] leading-relaxed">
             <p>
               Optimizing tech leadership consulting and executive search is a
@@ -76,13 +76,13 @@ function AboutUs() {
             </p>
           </div>
 
-          {/* Image */ }
+          
           <motion.div
             whileHover={ { y: -6 } }
             className="relative rounded-lg overflow-hidden shadow-lg border border-border"
           >
             <img
-              src="https://whiteglovelabs.io/Images/image5.webp"
+              src="https:
               alt="Whiteglove Labs team"
               className="w-full h-[420px] object-cover object-center"
             />
@@ -90,7 +90,7 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* Stats Section */ }
+      
       <section className="py-16">
         <div className="container mx-auto max-w-7xl px-4 lg:px-8">
           <div className="rounded-lg bg-primary p-10 text-primary-foreground shadow-lg">
@@ -106,7 +106,7 @@ function AboutUs() {
         </div>
       </section>
 
-      {/* Features Section */ }
+      
       <section className="py-16 sm:py-24 bg-muted/30">
         <div className="container mx-auto max-w-7xl px-4 lg:px-8">
           <h2 className="text-3xl font-semibold text-foreground mb-12 text-center">

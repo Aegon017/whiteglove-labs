@@ -8,7 +8,7 @@ import { Link } from "@tanstack/react-router"
 export function AboutSection() {
   return (
     <section id="about" className="relative py-20 md:py-28 overflow-hidden bg-background">
-      {/* Background accent gradient */ }
+      
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-gradient-to-b from-accent/5 via-background to-background"
@@ -23,7 +23,7 @@ export function AboutSection() {
             viewport={ { once: true } }
             transition={ { duration: 0.7, ease: "easeOut" } }
           >
-            {/* Section heading */ }
+            
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">
               Who We Are
             </p>
@@ -32,7 +32,7 @@ export function AboutSection() {
             </h2>
             <div className="mt-5 h-1 w-20 mx-auto rounded-full bg-primary" />
 
-            {/* Content */ }
+            
             <p className="mt-8 text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
               Whiteglove Labs is a premier talent strategy partner that helps
               organizations build high-performing teams through innovative
@@ -43,7 +43,7 @@ export function AboutSection() {
                 exceptional results</span> for our clients.
             </p>
 
-            {/* CTA */ }
+            
             <Button asChild className="mt-10 group bg-primary text-primary-foreground hover:bg-primary/90">
               <Link to="/about-us">
                 Learn more about us
@@ -54,7 +54,7 @@ export function AboutSection() {
         </div>
       </div>
 
-      {/* Decorative blurred orb */ }
+      
       <div
         aria-hidden
         className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-72 w-72 rounded-full bg-primary/10 blur-3xl"

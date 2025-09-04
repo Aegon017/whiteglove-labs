@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Testimonial, TestimonialCard } from "./testimonial-card"
 
-// Testimonials Grid Component
+
 interface TestimonialsGridProps {
   testimonials: Testimonial[]
   title?: string
@@ -81,7 +81,7 @@ export function TestimonialsGrid( {
   )
 }
 
-// Usage example with sample data
+
 const sampleTestimonials: Testimonial[] = [
   {
     id: 1,
@@ -134,7 +134,7 @@ const sampleTestimonials: Testimonial[] = [
   },
 ]
 
-// Example usage in a page component
+
 export function TestimonialsSection() {
   return (
     <TestimonialsGrid

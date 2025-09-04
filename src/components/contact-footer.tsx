@@ -9,11 +9,11 @@ export function ContactFooter() {
       id="contact"
       className="relative border-t border-border bg-background text-foreground"
     >
-      {/* Subtle background accent */ }
+      
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/5 via-transparent to-accent/10" />
 
       <div className="container relative z-10 mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-2 lg:gap-20 lg:px-8">
-        {/* Left: Contact Form Section */ }
+        
         <div>
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">
             Get in Touch
@@ -30,7 +30,7 @@ export function ContactFooter() {
           </div>
         </div>
 
-        {/* Right: Contact Info */ }
+        
         <div className="lg:pl-8">
           <ContactInfo />
         </div>

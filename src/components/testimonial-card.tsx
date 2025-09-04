@@ -25,7 +25,7 @@ export function TestimonialCard( {
   variant = "default",
   className = ""
 }: TestimonialCardProps ) {
-  // Render star ratings if provided
+  
   const renderStars = () => {
     if ( !testimonial.rating ) return null
 
@@ -44,7 +44,7 @@ export function TestimonialCard( {
     )
   }
 
-  // Variant-based styling
+  
   const cardClasses = {
     default: "border-border bg-card",
     featured: "border-primary/30 bg-primary/5",
