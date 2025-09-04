@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as GccStartupsRouteImport } from './routes/gcc-startups'
 import { Route as ExecutiveSearchRouteImport } from './routes/executive-search'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -21,11 +20,6 @@ import { Route as OurApproachTalentRetentionRouteImport } from './routes/our-app
 import { Route as OurApproachTalentExperienceRouteImport } from './routes/our-approach/talent-experience'
 import { Route as OurApproachTalentBrandingRouteImport } from './routes/our-approach/talent-branding'
 
-const TestimonialsRoute = TestimonialsRouteImport.update({
-  id: '/testimonials',
-  path: '/testimonials',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const GccStartupsRoute = GccStartupsRouteImport.update({
   id: '/gcc-startups',
   path: '/gcc-startups',
@@ -87,7 +81,6 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/executive-search': typeof ExecutiveSearchRoute
   '/gcc-startups': typeof GccStartupsRoute
-  '/testimonials': typeof TestimonialsRoute
   '/our-approach/talent-branding': typeof OurApproachTalentBrandingRoute
   '/our-approach/talent-experience': typeof OurApproachTalentExperienceRoute
   '/our-approach/talent-retention': typeof OurApproachTalentRetentionRoute
@@ -100,7 +93,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/executive-search': typeof ExecutiveSearchRoute
   '/gcc-startups': typeof GccStartupsRoute
-  '/testimonials': typeof TestimonialsRoute
   '/our-approach/talent-branding': typeof OurApproachTalentBrandingRoute
   '/our-approach/talent-experience': typeof OurApproachTalentExperienceRoute
   '/our-approach/talent-retention': typeof OurApproachTalentRetentionRoute
@@ -114,7 +106,6 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/executive-search': typeof ExecutiveSearchRoute
   '/gcc-startups': typeof GccStartupsRoute
-  '/testimonials': typeof TestimonialsRoute
   '/our-approach/talent-branding': typeof OurApproachTalentBrandingRoute
   '/our-approach/talent-experience': typeof OurApproachTalentExperienceRoute
   '/our-approach/talent-retention': typeof OurApproachTalentRetentionRoute
@@ -129,7 +120,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/executive-search'
     | '/gcc-startups'
-    | '/testimonials'
     | '/our-approach/talent-branding'
     | '/our-approach/talent-experience'
     | '/our-approach/talent-retention'
@@ -142,7 +132,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/executive-search'
     | '/gcc-startups'
-    | '/testimonials'
     | '/our-approach/talent-branding'
     | '/our-approach/talent-experience'
     | '/our-approach/talent-retention'
@@ -155,7 +144,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/executive-search'
     | '/gcc-startups'
-    | '/testimonials'
     | '/our-approach/talent-branding'
     | '/our-approach/talent-experience'
     | '/our-approach/talent-retention'
@@ -169,7 +157,6 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ExecutiveSearchRoute: typeof ExecutiveSearchRoute
   GccStartupsRoute: typeof GccStartupsRoute
-  TestimonialsRoute: typeof TestimonialsRoute
   OurApproachTalentBrandingRoute: typeof OurApproachTalentBrandingRoute
   OurApproachTalentExperienceRoute: typeof OurApproachTalentExperienceRoute
   OurApproachTalentRetentionRoute: typeof OurApproachTalentRetentionRoute
@@ -179,13 +166,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/testimonials': {
-      id: '/testimonials'
-      path: '/testimonials'
-      fullPath: '/testimonials'
-      preLoaderRoute: typeof TestimonialsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/gcc-startups': {
       id: '/gcc-startups'
       path: '/gcc-startups'
@@ -265,7 +245,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ExecutiveSearchRoute: ExecutiveSearchRoute,
   GccStartupsRoute: GccStartupsRoute,
-  TestimonialsRoute: TestimonialsRoute,
   OurApproachTalentBrandingRoute: OurApproachTalentBrandingRoute,
   OurApproachTalentExperienceRoute: OurApproachTalentExperienceRoute,
   OurApproachTalentRetentionRoute: OurApproachTalentRetentionRoute,

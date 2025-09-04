@@ -51,6 +51,7 @@ export function ContactForm() {
                         name="full-name"
                         className="border-border focus:ring-ring"
                         required
+                        autoComplete="name"
                     />
                 </div>
                 <div className="space-y-2">
@@ -61,6 +62,7 @@ export function ContactForm() {
                         type="email"
                         className="border-border focus:ring-ring"
                         required
+                        autoComplete="email"
                     />
                 </div>
             </div>

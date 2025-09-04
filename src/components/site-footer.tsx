@@ -22,75 +22,75 @@ export function SiteFooter() {
     <footer className="bg-background text-foreground border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
-          
+
           <div className="space-y-4">
             <Link to="/" className="inline-block">
-              <img src="/black-logo.png" alt="Whiteglove Labs" className="h-8 w-auto dark:invert" />
+              <span className="font-semibold">Whiteglove Labs</span>
             </Link>
             <p className="text-sm leading-relaxed text-muted-foreground">
               Structured interviews, calibrated feedback, and confident decisions.
             </p>
           </div>
 
-          
+
           <div>
             <h3 className="text-sm font-semibold text-foreground">Explore</h3>
             <ul className="mt-4 space-y-3">
-              {exploreLinks.map((item) => (
-                <li key={item.href}>
+              { exploreLinks.map( ( item ) => (
+                <li key={ item.href }>
                   <Link
-                    to={item.href}
+                    to={ item.href }
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    {item.label}
+                    { item.label }
                   </Link>
                 </li>
-              ))}
+              ) ) }
             </ul>
           </div>
 
-          
+
           <div>
             <h3 className="text-sm font-semibold text-foreground">Company</h3>
             <ul className="mt-4 space-y-3">
-              {companyLinks.map((item) => (
-                <li key={item.href}>
+              { companyLinks.map( ( item ) => (
+                <li key={ item.href }>
                   <Link
-                    to={item.href}
+                    to={ item.href }
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    {item.label}
+                    { item.label }
                   </Link>
                 </li>
-              ))}
+              ) ) }
             </ul>
           </div>
 
-          
+
           <div>
             <h3 className="text-sm font-semibold text-foreground">Connect</h3>
             <div className="mt-4 flex gap-3">
-              {socialLinks.map((item) => (
+              { socialLinks.map( ( item ) => (
                 <a
-                  key={item.label}
-                  href={item.href}
+                  key={ item.label }
+                  href={ item.href }
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={item.label}
+                  aria-label={ item.label }
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <item.icon className="h-5 w-5" />
                 </a>
-              ))}
+              ) ) }
             </div>
           </div>
         </div>
 
-        
+
         <div className="border-t border-border">
           <div className="flex flex-col items-center justify-between gap-4 px-4 py-6 md:flex-row">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              &copy; {new Date().getFullYear()} Whiteglove Labs. All rights reserved.
+              &copy; { new Date().getFullYear() } Whiteglove Labs. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a
