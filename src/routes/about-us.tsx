@@ -79,12 +79,12 @@ function AboutUs() {
           
           <motion.div
             whileHover={ { y: -6 } }
-            className="relative rounded-lg overflow-hidden shadow-lg border border-border"
+            className="relative overflow-hidden"
           >
             <img
-              src="https:
+              src="/about-us.png"
               alt="Whiteglove Labs team"
-              className="w-full h-[420px] object-cover object-center"
+              className="w-full h-full object-cover object-center"
             />
           </motion.div>
         </div>

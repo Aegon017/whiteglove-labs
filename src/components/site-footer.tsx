@@ -3,8 +3,8 @@ import { Linkedin, Twitter, Mail } from "lucide-react"
 
 export function SiteFooter() {
   const socialLinks = [
-    { icon: Linkedin, href: "https:
-    { icon: Twitter, href: "https:
+    { icon: Linkedin, href: "https://linkedin.com/company/whiteglove-labs", label: "LinkedIn" },
+    { icon: Twitter, href: "https://twitter.com/whiteglove-labs", label: "Twitter" },
     { icon: Mail, href: "mailto:hello@whiteglove-labs.com", label: "Email" },
   ]
 
