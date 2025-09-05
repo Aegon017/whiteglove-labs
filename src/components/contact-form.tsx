@@ -22,7 +22,7 @@ export function ContactForm() {
 
     if ( submitted ) {
         return (
-            <div className="rounded-lg border border border-accent-foreground bg-card p-6 text-card-foreground shadow-sm">
+            <div className="rounded-lg border-accent-foreground bg-card p-6 text-card-foreground shadow-sm">
                 <h3 className="mb-2 text-lg font-semibold">
                     Thank you for reaching out!
                 </h3>

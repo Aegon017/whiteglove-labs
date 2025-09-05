@@ -2,7 +2,6 @@
 
 import { createFileRoute } from "@tanstack/react-router"
 import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
 import { Users, Target, BarChart3 } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
 import SectionLayout from "@/components/section-layout"
@@ -15,17 +14,17 @@ export const Route = createFileRoute( "/executive-search" )( {
 function ExecutiveSearchPage() {
   const infoCards = [
     {
-      icon: <Users className="h-6 w-6 text-primary" />,
+      icon: Users,
       title: "Inclusive Leadership",
       desc: "We build diverse pipelines that fuel innovation and resilience in leadership roles.",
     },
     {
-      icon: <Target className="h-6 w-6 text-primary" />,
+      icon: Target,
       title: "Strategic Alignment",
       desc: "Leaders who match your company vision, values, and long-term strategic roadmap.",
     },
     {
-      icon: <BarChart3 className="h-6 w-6 text-primary" />,
+      icon: BarChart3,
       title: "Data-Driven Precision",
       desc: "Market intelligence and analytics ensure the right leadership fit at the right time.",
     },
