@@ -2,39 +2,17 @@
 
 import { ContactForm } from "@/components/contact-form"
 import { ContactInfo } from "@/components/contact-info"
+import SectionHero from "./section-hero"
+import SectionLayout from "./section-layout"
 
 export function ContactFooter() {
   return (
-    <footer
-      id="contact"
-      className="relative border-t border-border bg-background text-foreground"
-    >
-      
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/5 via-transparent to-accent/10" />
-
-      <div className="container relative z-10 mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-2 lg:gap-20 lg:px-8">
-        
-        <div>
-          <span className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Get in Touch
-          </span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Ready to Transform Your Talent Strategy?
-          </h2>
-          <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-            Let's discuss how we can help you build high-performing teams and drive business growth.
-          </p>
-
-          <div className="mt-8 rounded-lg border border-border bg-card p-6 shadow-lg">
-            <ContactForm />
-          </div>
-        </div>
-
-        
-        <div className="lg:pl-8">
-          <ContactInfo />
-        </div>
+    <SectionLayout id="contact" className="bg-muted">
+      <SectionHero heading="Get in Touch" subHeading="Ready to Transform Your Talent Strategy?" brief="Let's discuss how we can help you build high-performing teams and drive business growth." />
+      <div className="grid gap-12 md:grid-cols-2 py-8">
+        <ContactInfo />
+        <ContactForm />
       </div>
-    </footer>
+    </SectionLayout>
   )
 }

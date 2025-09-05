@@ -4,6 +4,8 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
+import SectionHero from "./section-hero"
+import SectionLayout from "./section-layout"
 
 const services = [
   {
@@ -42,90 +44,77 @@ export function Services() {
   const [ selectedService, setSelectedService ] = useState<number | null>( null )
 
   return (
-    <section id="services" className="relative bg-background py-20 md:py-24">
-      <div className="container max-w-7xl mx-auto px-4 md:px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="text-sm font-medium uppercase tracking-wider text-primary">
-            Our Services
-          </span>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Comprehensive Talent Solutions
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            We offer end-to-end talent solutions designed to help your organization thrive in today's competitive landscape.
-          </p>
-        </div>
+    <SectionLayout id="services" className="bg-background">
+      <SectionHero heading="Our Services" subHeading="Comprehensive Talent Solutions" brief=" We offer end-to-end talent solutions designed to help your organization thrive in today's competitive landscape." />
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        { services.map( ( service, index ) => (
+          <motion.div
+            key={ service.n }
+            className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
+            whileHover={ { y: -4 } }
+            initial={ { opacity: 0, y: 20 } }
+            whileInView={ { opacity: 1, y: 0 } }
+            viewport={ { once: true } }
+            transition={ { duration: 0.3, delay: index * 0.1 } }
+            onClick={ () => setSelectedService( index ) }
+          >
+            <span className="text-sm font-medium text-primary">
+              { service.n }
+            </span>
+            <h3 className="mt-3 text-xl font-semibold text-card-foreground">
+              { service.t }
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              { service.d }
+            </p>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          { services.map( ( service, index ) => (
-            <motion.div
-              key={ service.n }
-              className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
-              whileHover={ { y: -4 } }
-              initial={ { opacity: 0, y: 20 } }
-              whileInView={ { opacity: 1, y: 0 } }
-              viewport={ { once: true } }
-              transition={ { duration: 0.3, delay: index * 0.1 } }
-              onClick={ () => setSelectedService( index ) }
-            >
-              <span className="text-sm font-medium text-primary">
-                { service.n }
-              </span>
-              <h3 className="mt-3 text-xl font-semibold text-card-foreground">
-                { service.t }
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                { service.d }
-              </p>
-
-              <Dialog open={ selectedService === index } onOpenChange={ ( open ) => !open && setSelectedService( null ) }>
-                <DialogTrigger asChild>
-                  <button className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80">
-                    Learn more
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="ml-1 h-4 w-4"
+            <Dialog open={ selectedService === index } onOpenChange={ ( open ) => !open && setSelectedService( null ) }>
+              <DialogTrigger asChild>
+                <button className="mt-4 inline-flex items-center text-sm font-medium text-primary hover:text-primary/80">
+                  Learn more
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="ml-1 h-4 w-4"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-3xl bg-background border-border">
+                <DialogHeader>
+                  <span className="text-sm font-medium text-primary">
+                    { service.n }
+                  </span>
+                  <DialogTitle className="text-2xl font-bold text-foreground">
+                    { service.t }
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="text-muted-foreground">
+                  <p className="leading-relaxed">{ service.full }</p>
+                  <div className="mt-6">
+                    <Button
+                      variant="outline"
+                      className="border-border text-foreground hover:bg-accent hover:text-accent-foreground"
+                      onClick={ () => setSelectedService( null ) }
                     >
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </svg>
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="max-w-3xl bg-background border-border">
-                  <DialogHeader>
-                    <span className="text-sm font-medium text-primary">
-                      { service.n }
-                    </span>
-                    <DialogTitle className="text-2xl font-bold text-foreground">
-                      { service.t }
-                    </DialogTitle>
-                  </DialogHeader>
-                  <div className="text-muted-foreground">
-                    <p className="leading-relaxed">{ service.full }</p>
-                    <div className="mt-6">
-                      <Button
-                        variant="outline"
-                        className="border-border text-foreground hover:bg-accent hover:text-accent-foreground"
-                        onClick={ () => setSelectedService( null ) }
-                      >
-                        Close
-                      </Button>
-                    </div>
+                      Close
+                    </Button>
                   </div>
-                </DialogContent>
-              </Dialog>
-            </motion.div>
-          ) ) }
-        </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+          </motion.div>
+        ) ) }
       </div>
-    </section>
+    </SectionLayout>
   )
 }

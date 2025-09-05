@@ -5,6 +5,8 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Users, Target, BarChart3 } from "lucide-react"
 import { PageHero } from "@/components/page-hero"
+import SectionLayout from "@/components/section-layout"
+import InfoCard from "@/components/info-card"
 
 export const Route = createFileRoute( "/executive-search" )( {
   component: ExecutiveSearchPage,
@@ -35,10 +37,8 @@ function ExecutiveSearchPage() {
         title="Executive Search"
         subtitle="Connecting your organization with top leadership talent through strategic, data-driven, and inclusive methods."
       />
-
-      
-      <section className="py-16 sm:py-24">
-        <div className="container mx-auto max-w-7xl px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <SectionLayout id='executive-search' className="bg-background">
+        <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-6 text-muted-foreground text-[16px] leading-relaxed">
             <p>
               Technology is transforming every industry, requiring a clear vision and strategic roadmap for effective utilization. In an era of constant disruption, relying on skilled technologists is more crucial than ever. Building lasting relationships between technology leadership and organizations remains a complex challenge.
@@ -58,20 +58,18 @@ function ExecutiveSearchPage() {
             whileHover={ { y: -6 } }
             animate={ { opacity: 1, x: 0 } }
             transition={ { duration: 0.7 } }
-            className="relative overflow-hidden rounded-lg border border-border shadow-lg"
+            className="relative overflow-hidden"
           >
             <img
               src="/executive-search.png"
               alt="Executive collaboration"
-              className="w-full h-[420px] object-cover object-center"
+              className="w-full h-auto object-cover object-center"
             />
           </motion.div>
         </div>
-      </section>
-
-      
-      <section className="py-16 sm:py-24 bg-muted/30">
-        <div className="container mx-auto max-w-7xl px-4 lg:px-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      </SectionLayout >
+      <SectionLayout id='info' className="bg-muted">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           { infoCards.map( ( card, i ) => (
             <motion.div
               key={ i }
@@ -80,17 +78,11 @@ function ExecutiveSearchPage() {
               transition={ { duration: 0.5, delay: i * 0.2 } }
               viewport={ { once: true } }
             >
-              <Card className="h-full border-border bg-card shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-6">
-                  <div className="mb-3">{ card.icon }</div>
-                  <h3 className="text-lg font-semibold text-card-foreground">{ card.title }</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{ card.desc }</p>
-                </CardContent>
-              </Card>
+              <InfoCard icon={ card.icon } title={ card.title } description={ card.desc } />
             </motion.div>
           ) ) }
         </div>
-      </section>
+      </SectionLayout>
     </main>
   )
 }

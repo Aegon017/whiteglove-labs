@@ -22,7 +22,7 @@ export function ContactForm() {
 
     if ( submitted ) {
         return (
-            <div className="rounded-lg border border-border bg-card p-6 text-card-foreground shadow-sm">
+            <div className="rounded-lg border border border-accent-foreground bg-card p-6 text-card-foreground shadow-sm">
                 <h3 className="mb-2 text-lg font-semibold">
                     Thank you for reaching out!
                 </h3>
@@ -32,7 +32,7 @@ export function ContactForm() {
                 </p>
                 <Button
                     variant="outline"
-                    className="mt-4 border-border text-foreground hover:bg-accent hover:text-accent-foreground"
+                    className="mt-4 border border-accent-foreground text-foreground hover:bg-accent hover:text-accent-foreground"
                     onClick={ () => setSubmitted( false ) }
                 >
                     Send another message
@@ -49,7 +49,7 @@ export function ContactForm() {
                     <Input
                         id="full-name"
                         name="full-name"
-                        className="border-border focus:ring-ring"
+                        className="border border-accent-foreground/20 focus:ring-ring"
                         required
                         autoComplete="name"
                     />
@@ -60,7 +60,7 @@ export function ContactForm() {
                         id="email"
                         name="email"
                         type="email"
-                        className="border-border focus:ring-ring"
+                        className="border border-accent-foreground/20 focus:ring-ring"
                         required
                         autoComplete="email"
                     />
@@ -73,7 +73,7 @@ export function ContactForm() {
                     id="message"
                     name="message"
                     rows={ 5 }
-                    className="min-h-[120px] border-border focus:ring-ring"
+                    className="min-h-[120px] border border-accent-foreground/20 focus:ring-ring"
                     required
                 />
             </div>

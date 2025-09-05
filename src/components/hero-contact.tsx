@@ -2,24 +2,21 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ContactForm } from "@/components/contact-form"
+import SectionLayout from "./section-layout"
 
 export function HeroContact() {
   return (
-    <section className="relative isolate overflow-hidden bg-foreground">
-      
+    <section className="relative isolate overflow-hidden bg-foreground h-dvh">
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-[url('/people-walking-in-lobby--overhead-view.png')] bg-cover bg-center"
       />
-      
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-gradient-to-br from-foreground/95 via-foreground/90 to-foreground/80"
       />
-
-      <div className="container max-w-7xl mx-auto relative px-4 py-24 sm:py-32">
+      <SectionLayout id="hero" className="py-24 sm:py-44">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          
           <div className="text-background space-y-6">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/80">
               Whiteglove Labs
@@ -36,20 +33,18 @@ export function HeroContact() {
               and global capability centers.
             </p>
           </div>
-
-          
-          <Card className="w-full border border-border bg-card shadow-lg">
-            <CardHeader className="border-b border-border pb-4">
+          <Card className="w-full border border-border bg-background/80">
+            <CardHeader className="border-border border-b">
               <CardTitle className="text-xl font-bold tracking-tight text-card-foreground">
                 Let&apos;s create a bespoke solution for you
               </CardTitle>
             </CardHeader>
-            <CardContent className="pt-6">
+            <CardContent>
               <ContactForm />
             </CardContent>
           </Card>
         </div>
-      </div>
+      </SectionLayout>
     </section>
   )
 }

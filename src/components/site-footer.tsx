@@ -9,19 +9,18 @@ export function SiteFooter() {
   ]
 
   const exploreLinks = [
-    { href: "/testimonials", label: "Testimonials" },
-    { href: "/about-us", label: "About" },
-  ]
-
-  const companyLinks = [
-    { href: "/about-us", label: "About" },
+    { href: "/", label: "Home" },
+    { href: "/about-us", label: "About Us" },
+    { href: "/executive-search", label: "Executive Search" },
+    { href: "/our-approach", label: "Our Approach" },
+    { href: "/gcc-startups", label: "Global Capability Center & Startups" },
     { href: "/contact", label: "Contact" },
   ]
 
   return (
     <footer className="bg-background text-foreground border-t border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-3">
 
           <div className="space-y-4">
             <Link to="/" className="inline-block">
@@ -31,8 +30,6 @@ export function SiteFooter() {
               Structured interviews, calibrated feedback, and confident decisions.
             </p>
           </div>
-
-
           <div>
             <h3 className="text-sm font-semibold text-foreground">Explore</h3>
             <ul className="mt-4 space-y-3">
@@ -48,25 +45,6 @@ export function SiteFooter() {
               ) ) }
             </ul>
           </div>
-
-
-          <div>
-            <h3 className="text-sm font-semibold text-foreground">Company</h3>
-            <ul className="mt-4 space-y-3">
-              { companyLinks.map( ( item ) => (
-                <li key={ item.href }>
-                  <Link
-                    to={ item.href }
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    { item.label }
-                  </Link>
-                </li>
-              ) ) }
-            </ul>
-          </div>
-
-
           <div>
             <h3 className="text-sm font-semibold text-foreground">Connect</h3>
             <div className="mt-4 flex gap-3">

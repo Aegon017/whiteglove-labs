@@ -34,18 +34,10 @@ const businessHours = [
 
 export function ContactInfo() {
     return (
-        <div className="space-y-10 text-foreground">
-            
-            <div>
-                <h2 className="mb-6 text-2xl font-bold tracking-tight">
-                    Contact Information
-                </h2>
-                <p className="text-muted-foreground">
-                    Fill out the form and we&apos;ll get back to you as soon as possible.
-                </p>
-            </div>
-
-            
+        <div className="space-y-4 text-foreground">
+            {/* <h2 className="text-xl font-semibold">
+                Contact Information
+            </h2> */}
             <div className="space-y-6">
                 { contactItems.map( ( item ) => (
                     <div key={ item.title } className="flex items-start">
@@ -59,8 +51,6 @@ export function ContactInfo() {
                     </div>
                 ) ) }
             </div>
-
-            
             <div className="border-t border-border pt-6">
                 <h3 className="mb-4 font-medium text-foreground">Business Hours</h3>
                 <dl className="space-y-3">
