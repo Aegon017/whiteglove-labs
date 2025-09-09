@@ -36,17 +36,18 @@ jobs:
     - name: Install PHP dependencies
       run: composer install --no-dev --optimize-autoloader
 
-    - name: Deploy project (only dist/, contact.php, composer files)
+    - name: Deploy dist + minimal PHP files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /whiteglove-labs.ppfwebdevelopers.com/
+        server-dir: /public_html/   # adjust for your hosting root
         local-dir: ./
         exclude: |
-          **
-          !dist/**
-          !contact.php
-          !composer.json
-          !composer.lock
+          **                       # ignore everything
+          !dist/**                 # allow dist
+          !contact.php             # allow contact.php
+          !composer.json           # allow composer.json
+          !composer.lock           # allow composer.lock
+          vendor/**                # explicitly exclude vendor
