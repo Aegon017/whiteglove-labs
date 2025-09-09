@@ -27,7 +27,7 @@ export function SiteFooter() {
               <span className="font-semibold">Whiteglove Labs</span>
             </Link>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Structured interviews, calibrated feedback, and confident decisions.
+              Delivering a whiteglove experience.
             </p>
           </div>
           <div>
