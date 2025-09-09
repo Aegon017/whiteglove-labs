@@ -19,7 +19,7 @@ function AboutUs() {
     <main className="bg-background min-h-screen">
       <PageHero
         title="About Us"
-        subtitle="Learn more about us delivering a whilteglove experience for you, our expertise in executive search, leadership consulting and building high performing teams."
+        subtitle="Learn more about us delivering a whiteglove experience for you, our expertise in executive search, leadership consulting and building high performing teams."
       />
       <SectionLayout id='about-us' className="bg-background">
         <div className='grid lg:grid-cols-2 gap-12'>
