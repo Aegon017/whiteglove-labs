@@ -18,9 +18,9 @@ jobs:
       with:
         node-version: '22'
 
-    - name: Install Node dependencies and build React app
+    - name: Installing Node dependencies
       run: |
-        npm install
+        npm i
         npm run build
 
     - name: Use PHP
