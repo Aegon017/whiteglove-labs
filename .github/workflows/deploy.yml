@@ -60,4 +60,4 @@ jobs:
           !contact.php
           !composer.json
           !composer.lock
-          vendor/**
+          !vendor/**
