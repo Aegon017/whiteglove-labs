@@ -16,9 +16,9 @@ const services = [
   },
   {
     n: "02.",
-    t: "Global Capability Centers",
+    t: "Global Capability Centres",
     d: "Stand up high-leverage GCCs with clarity on scope, capability maps, and governance.",
-    full: `Our GCC solutions help organizations establish and optimize global capability centers with clear operational frameworks and governance models for seamless integration and maximum impact.`,
+    full: `Our GCC solutions help organizations establish and optimize global capability centres with clear operational frameworks and governance models for seamless integration and maximum impact.`,
   },
   {
     n: "03.",

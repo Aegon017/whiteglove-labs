@@ -25,12 +25,12 @@ export function HeroContact() {
               Finding Visionary Tech Leaders
             </h1>
             <p className="text-lg text-muted-foreground/95 max-w-lg">
-              For Next-Gen Startups, GCCS and Enterprises
+              For Next-Gen Start Ups, GCCS and Enterprises
             </p>
             <p className="text-base leading-relaxed text-muted-foreground/90 max-w-2xl">
               We redefine talent strategy by partnering with founders and leaders to build
               repeatable, fair, and data-backed hiring systems across leadership, technology,
-              and global capability centers.
+              and global capability centres.
             </p>
           </div>
           <Card className="w-full border border-border bg-background/80">

@@ -36,21 +36,21 @@ function GCCStartupsPage() {
     {
       icon: Target,
       title: "Legal Entity Setup",
-      desc: "Facilitate the seamless establishment of the appropriate legal entity and secure requisite regulatory approvals with the support of our expert counsel on Global Capability Center (GCC) solutions.",
+      desc: "Facilitate the seamless establishment of the appropriate legal entity and secure requisite regulatory approvals with the support of our expert counsel on Global Capability Centre (GCC) solutions.",
     },
   ]
 
   return (
     <main className="bg-background min-h-screen">
       <PageHero
-        title="Global Capability Centre & Startups"
-        subtitle="Mastering Global Growth: Your Seamless Journey to Establishing and Expanding Capability Centers while achieving Worldwide Success with our Specialized Expertise in GCCs & Indigenous Startups."
+        title="Global Capability Centre & Start Ups"
+        subtitle="Mastering Global Growth: Your Seamless Journey to Establishing and Expanding Capability Centers while achieving Worldwide Success with our Specialized Expertise in GCCs & Indigenous Start Ups."
       />
       <SectionLayout id='gcc-startups' className="bg-background">
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-6 text-muted-foreground text-[16px] leading-relaxed">
             <p>
-              We partner with you to establish Global Capability Centres and startups, combining strategic guidance, operational excellence, and talent intelligence to accelerate growth and ensure sustainable success.
+              We partner with you to establish Global Capability Centres and Start Ups, combining strategic guidance, operational excellence, and talent intelligence to accelerate growth and ensure sustainable success.
             </p>
             <p>
               From discovery to legal setup, we provide end-to-end advisory, creating a seamless journey for organizations seeking global expansion and operational efficiency.
@@ -65,7 +65,7 @@ function GCCStartupsPage() {
           >
             <img
               src="/global_capability_centre_and_startups.png"
-              alt="GCC & Startups"
+              alt="GCC & Start Ups"
               className="w-full h-auto object-cover object-center"
             />
           </motion.div>

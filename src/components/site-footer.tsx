@@ -13,7 +13,7 @@ export function SiteFooter() {
     { href: "/about-us", label: "About Us" },
     { href: "/executive-search", label: "Executive Search" },
     { href: "/our-approach", label: "Our Approach" },
-    { href: "/gcc-startups", label: "Global Capability Center & Startups" },
+    { href: "/gcc-startups", label: "Global Capability Centre & Start Ups" },
     { href: "/contact", label: "Contact" },
   ]
 
