@@ -42,10 +42,3 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./   # root of repo
-        exclude: |
-          **
-          !dist/**
-          !contact.php
-          !composer.json
-          !composer.lock
