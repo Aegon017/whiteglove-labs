@@ -1,8 +1,12 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use Dotenv\Dotenv;
 
 require __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 header("Content-Type: application/json");
 
@@ -22,15 +26,15 @@ $mail = new PHPMailer(true);
 
 try {
     $mail->isSMTP();
-    $mail->Host       = "smtp.gmail.com";
+    $mail->Host       = $_ENV["SMTP_HOST"];
     $mail->SMTPAuth   = true;
-    $mail->Username   = "training@zoomgroup.com";
-    $mail->Password   = "ilhraxnkuouiuipn";
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port       = 465;
+    $mail->Username   = $_ENV["SMTP_USERNAME"];
+    $mail->Password   = $_ENV["SMTP_PASSWORD"];
+    $mail->SMTPSecure = $_ENV["SMTP_ENCRYPTION"];
+    $mail->Port       = (int)$_ENV["SMTP_PORT"];
 
-    $mail->setFrom("training@zoomgroup.com", "Zoom Group Training");
-    $mail->addAddress("kondanagamalleswararao016@gmail.com");
+    $mail->setFrom($_ENV["SMTP_FROM_EMAIL"], $_ENV["SMTP_FROM_NAME"]);
+    $mail->addAddress($_ENV["SMTP_TO_EMAIL"]);
     $mail->addReplyTo($email, $name);
 
     $mail->isHTML(true);
