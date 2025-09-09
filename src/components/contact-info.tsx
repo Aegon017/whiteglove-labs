@@ -6,7 +6,7 @@ const contactItems = [
     {
         icon: Mail,
         title: "Email us",
-        value: "info@whiteglove-labs.io",
+        value: "info@whiteglovelabs.io",
     },
     {
         icon: Phone,
