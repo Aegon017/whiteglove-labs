@@ -25,7 +25,7 @@ export function HeroContact() {
               Finding Visionary Tech Leaders
             </h1>
             <p className="text-lg text-muted-foreground/95 max-w-lg">
-              For Next-Gen Startups and Enterprises
+              For Next-Gen Startups, GCCS and Enterprises
             </p>
             <p className="text-base leading-relaxed text-muted-foreground/90 max-w-2xl">
               We redefine talent strategy by partnering with founders and leaders to build
@@ -36,7 +36,7 @@ export function HeroContact() {
           <Card className="w-full border border-border bg-background/80">
             <CardHeader className="border-border border-b">
               <CardTitle className="text-xl font-bold tracking-tight text-card-foreground">
-                Let&apos;s create a bespoke solution for you
+                Together, we’ll shape a solution built just for you.
               </CardTitle>
             </CardHeader>
             <CardContent>

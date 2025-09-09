@@ -10,9 +10,9 @@ export const Route = createFileRoute( '/about-us' )( {
 function AboutUs() {
   const stats = [
     { value: '20+', label: 'Years Experience' },
-    { value: '500+', label: 'Leadership Placements' },
+    { value: '100+', label: 'Leadership Placements' },
     { value: '98%', label: 'Retention Rate' },
-    { value: '50+', label: 'GCCs Established' },
+    { value: '50+', label: 'Happy Customers' },
   ]
 
   return (

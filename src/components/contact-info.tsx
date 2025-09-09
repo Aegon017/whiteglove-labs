@@ -6,38 +6,22 @@ const contactItems = [
     {
         icon: Mail,
         title: "Email us",
-        value: "hello@whiteglove-labs.com",
+        value: "info@whiteglove-labs.io",
     },
     {
         icon: Phone,
         title: "Call us",
-        value: "+1 (555) 123-4567",
-    },
-    {
-        icon: MapPin,
-        title: "Visit us",
-        value: (
-            <>
-                123 Tech Park Avenue
-                <br />
-                San Francisco, CA 94107
-            </>
-        ),
-    },
+        value: "+91 97043 81094",
+    }
 ]
 
 const businessHours = [
     { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM" },
-    { day: "Saturday", hours: "10:00 AM - 4:00 PM" },
-    { day: "Sunday", hours: "Closed" },
 ]
 
 export function ContactInfo() {
     return (
         <div className="space-y-4 text-foreground">
-            {/* <h2 className="text-xl font-semibold">
-                Contact Information
-            </h2> */}
             <div className="space-y-6">
                 { contactItems.map( ( item ) => (
                     <div key={ item.title } className="flex items-start">
