@@ -7,12 +7,14 @@ const contactItems = [
         icon: Mail,
         title: "Email us",
         value: "info@whiteglovelabs.io",
+        type: "email",
     },
     {
         icon: Phone,
         title: "Call us",
         value: "+91 97043 81094",
-    }
+        type: "phone",
+    },
 ]
 
 const businessHours = [
@@ -30,7 +32,25 @@ export function ContactInfo() {
                         </div>
                         <div className="ml-4">
                             <h3 className="font-medium text-foreground">{ item.title }</h3>
-                            <p className="text-muted-foreground">{ item.value }</p>
+                            { item.type === "email" ? (
+                                <p className="text-muted-foreground">
+                                    <a
+                                        href={ `mailto:${ item.value }` }
+                                        className="transition-colors hover:text-primary hover:underline"
+                                    >
+                                        { item.value }
+                                    </a>
+                                </p>
+                            ) : (
+                                <p className="text-muted-foreground">
+                                    <a
+                                        href={ `tel:${ item.value }` }
+                                        className="transition-colors hover:text-primary hover:underline"
+                                    >
+                                        { item.value }
+                                    </a>
+                                </p>
+                            ) }
                         </div>
                     </div>
                 ) ) }
