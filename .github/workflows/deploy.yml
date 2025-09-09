@@ -18,9 +18,9 @@ jobs:
       with:
         node-version: '22'
 
-    - name: Installing Node dependencies
+    - name: Install Node dependencies and build React app
       run: |
-        npm i
+        npm install
         npm run build
 
     - name: Use PHP
@@ -42,3 +42,10 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        exclude: |
+          **
+          !dist/**
+          !contact.php
+          !composer.json
+          !composer.lock
