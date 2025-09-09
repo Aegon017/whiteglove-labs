@@ -13,16 +13,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22'
-
-    - name: Install Node dependencies and build React app
-      run: |
-        npm install
-        npm run build
-
     - name: Use PHP
       uses: shivammathur/setup-php@v2
       with:
@@ -36,18 +26,16 @@ jobs:
     - name: Install PHP dependencies
       run: composer install --no-dev --optimize-autoloader
 
-    - name: Deploy dist + minimal PHP files
+    - name: Deploy project (only dist/, contact.php, composer files)
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html/   # adjust for your hosting root
         local-dir: ./
         exclude: |
-          **                       # ignore everything
-          !dist/**                 # allow dist
-          !contact.php             # allow contact.php
-          !composer.json           # allow composer.json
-          !composer.lock           # allow composer.lock
-          vendor/**                # explicitly exclude vendor
+          **
+          !dist/**
+          !contact.php
+          !composer.json
+          !composer.lock
