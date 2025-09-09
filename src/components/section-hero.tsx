@@ -16,7 +16,6 @@ const SectionHero = ( { heading, subHeading, brief }: Props ) => {
             <p className="mt-4 text-lg text-muted-foreground">
                 { brief }
             </p>
-            {/* <div className="mt-5 h-1 w-20 rounded-full bg-primary" /> */ }
         </>
     )
 }

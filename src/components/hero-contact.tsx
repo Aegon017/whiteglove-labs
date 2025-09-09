@@ -18,7 +18,7 @@ export function HeroContact() {
       <SectionLayout id="hero" className="py-24 sm:py-44">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="text-background space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary-foreground/80">
+            <p className="text-sm font-semibold tracking-wider text-primary-foreground/80">
               Whiteglove Labs
             </p>
             <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl drop-shadow-md">
