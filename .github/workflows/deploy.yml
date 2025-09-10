@@ -42,8 +42,8 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        protocol: sftp
-        port: 22
+        protocol: ftps
+        port: 21
         local-dir: ./dist/
         exclude: |
           **      # exclude everything
@@ -56,8 +56,8 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        protocol: sftp
-        port: 22
+        protocol: ftps
+        port: 21
         local-dir: ./
         exclude: |
           **                # exclude everything
