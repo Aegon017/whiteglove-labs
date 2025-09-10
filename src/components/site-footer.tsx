@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router"
-import { Linkedin, X, Mail } from "lucide-react"
+import { Linkedin, Instagram, Mail } from "lucide-react"
 
 export function SiteFooter() {
   const socialLinks = [
     { icon: Linkedin, href: "https://linkedin.com/company/whiteglove-labs", label: "LinkedIn" },
-    { icon: X, href: "https://x.com/whiteglove-labs", label: "Twitter" },
-    { icon: Mail, href: "mailto:hello@whiteglove-labs.com", label: "Email" },
+    { icon: Instagram, href: "https://instagram.com/whiteglove-labs", label: "Instagram" },
+    { icon: Mail, href: "mailto:ingo@whiteglovelabs.io", label: "Email" },
   ]
 
   const exploreLinks = [
