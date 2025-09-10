@@ -42,10 +42,12 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        protocol: sftp
+        port: 22
         local-dir: ./dist/
         exclude: |
-          **
-          !**/*
+          **      # exclude everything
+          !**/*   # include everything inside dist
       continue-on-error: false
 
     - name: Deploy PHP/composer files
@@ -54,9 +56,11 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        protocol: sftp
+        port: 22
         local-dir: ./
         exclude: |
-          **
+          **                # exclude everything
           !contact.php
           !composer.json
           !composer.lock
