@@ -42,8 +42,7 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        port: 21
+        timeout: 60000
         local-dir: ./dist/
         exclude: |
           **      # exclude everything
@@ -56,11 +55,10 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        port: 21
+        timeout: 60000
         local-dir: ./
         exclude: |
-          **                # exclude everything
+          **
           !contact.php
           !composer.json
           !composer.lock
